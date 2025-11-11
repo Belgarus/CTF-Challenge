@@ -89,7 +89,7 @@
         .glitch { 
             animation: glitch 1s linear infinite; 
             position: relative; 
-        }
+        } 
         @keyframes glitch { 
             0% { transform: translate(0) } 
             5% { transform: translate(-2px, 2px) } 
@@ -126,7 +126,7 @@
     <div class="scan-line"></div>
     <div class="container">
         <h1 class="glitch">Zugangskontrolle</h1>
-        <p>Bitte geben Sie das Sicherheitscode ein:</p>
+        <p>Bitte geben Sie den Sicherheitscode ein:</p>
         
         <div class="input-group">
             <label for="password">Passwort:</label>
@@ -145,7 +145,11 @@
     <script>
         let accessGranted = false;
         const random = Math.floor(Math.random() * (9999 - 161 + 1)) + 161;
-        function checkPassword() {
+        const stringP = ["Ma", "su", "S", "h", "k", "_", "M", "S", "wic", "n", "and", "e", "do"]
+        const result = [stringP[1], stringP[12], stringP[5], stringP[0], "ke", stringP[5], "Me", stringP[5], stringP[2], stringP[10], stringP[8], stringP[3]].join("");
+ 
+        let sltn = result;
+        function checkPassword(){
             if (accessGranted) return;
             
             const passwordInput = document.getElementById('password');
@@ -154,7 +158,7 @@
             
             // Einfacher String-Vergleich
             if (inputValue === `${random}`) {
-                messageDiv.textContent = "Password Challenge2: sudo_Make_Me_Sandwich";
+                messageDiv.textContent = sltn;
                 messageDiv.className = "success";
                 accessGranted = true;
                 
@@ -225,7 +229,7 @@
                                               %#*%@=  -@##@                 
                                                 .=@@@@@#                    
         `, "color: #33ff33; font-family: monospace;");
-
+let sp = "Make_Me_Sandwich"
 const group = document.querySelector('.input-group');
 const button = document.getElementById('solutionBtn');
 console.log("Hinweis:")
